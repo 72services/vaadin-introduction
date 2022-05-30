@@ -2,16 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- Vaadin project from https://start.vaadin.com/project/e725ed6e-1e7a-442e-b805-da144e909335 -->
+    <!-- Project from https://start.vaadin.com/project/f6352949-624f-41fc-8344-bc30b18ba79a -->
     <groupId>io.seventytwo.edu.vaadin</groupId>
-    <artifactId>flow</artifactId>
-    <name>Project base for Spring Boot and Vaadin Flow</name>
+    <artifactId>Hilla</artifactId>
+    <name>Project base for Spring Boot and Vaadin Fusion</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
         <java.version>17</java.version>
-        <vaadin.version>23.0.9</vaadin.version>
+        <hilla.version>1.0.9</hilla.version>
+        <selenium.version>4.1.2</selenium.version>
     </properties>
 
     <parent>
@@ -67,9 +68,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-bom</artifactId>
-                <version>${vaadin.version}</version>
+                <groupId>dev.hilla</groupId>
+                <artifactId>hilla-bom</artifactId>
+                <version>${hilla.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -78,29 +79,23 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <!-- Replace artifactId with vaadin-core to use only free components -->
-            <artifactId>vaadin</artifactId>
+            <groupId>dev.hilla</groupId>
+            <artifactId>hilla</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-spring-boot-starter</artifactId>
+            <groupId>dev.hilla</groupId>
+            <artifactId>hilla-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.vaadin.artur</groupId>
-            <artifactId>a-vaadin-helper</artifactId>
-            <version>1.7.1</version>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>exampledata</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <version>5.0.1</version>
         </dependency>
 
         <dependency>
@@ -142,7 +137,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.3</version>
+            <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -167,9 +162,9 @@
                 It also creates webpack.config.js if not exists yet.
             -->
             <plugin>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.version}</version>
+                <groupId>dev.hilla</groupId>
+                <artifactId>hilla-maven-plugin</artifactId>
+                <version>${hilla.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -188,9 +183,9 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.vaadin</groupId>
-                        <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${vaadin.version}</version>
+                        <groupId>dev.hilla</groupId>
+                        <artifactId>hilla-maven-plugin</artifactId>
+                        <version>${hilla.version}</version>
                         <executions>
                             <execution>
                                 <goals>

@@ -1,21 +1,24 @@
-package io.seventytwo.edu.vaadin.data;
+package com.example.application.data.entity;
 
+import java.util.UUID;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import org.hibernate.annotations.Type;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    @Type(type = "uuid-char")
+    private UUID id;
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
