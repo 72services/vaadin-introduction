@@ -17,10 +17,10 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 @Theme(value = "myapp")
 @PWA(name = "My App", shortName = "My App", offlineResources = {})
-public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
+public class HillaApplication extends SpringBootServletInitializer implements AppShellConfigurator {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(HillaApplication.class, args);
     }
 
 }
